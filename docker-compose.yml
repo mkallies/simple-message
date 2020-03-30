@@ -6,7 +6,9 @@ services:
       target: dev
     ports:
       - "4000:4000"
-    env_file: .env
+    environment:
+      - PORT=4000
+      - DB_URI=postgres://user:asdfasdf@db:5432/simple_message
     volumes:
       - ./api:/app/src
 
